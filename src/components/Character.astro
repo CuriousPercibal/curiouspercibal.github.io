@@ -1,0 +1,19 @@
+---
+
+interface Props {
+	fg: string;
+	bg: string;
+	char: string;
+}
+
+const { fg, bg, char } = Astro.props;
+
+---
+<div style=`color: ${fg}; background-color: ${bg}`>{char}</div>
+<style>
+    p {
+        width: fit-content;
+        height: fit-content;
+        display: inline;
+    }
+</style>

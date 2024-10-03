@@ -1,0 +1,44 @@
+---
+
+interface Props {
+	command: string;
+    editable: boolean;
+}
+
+const { command, editable } = Astro.props;
+
+---
+<div class="prompt">
+    <span><pre><font color="#859900"><b>imremolnar<font color="white">(@)</font>inf.elte.hu</b></font>:<font color="#268BD2"><b>/home/me</b></font>$ </pre></span>
+    <span>{command}</span>
+    <span class="cursor" style=`display: ${editable ? 'inline-block': 'none'}`>&nbsp;</span> 
+</div>
+<style is:global>
+    .prompt {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        align-items: center;
+    }
+
+    .prompt-input {
+        min-width: 10pt;
+        max-width: fit-content;
+        height: 20pt;
+        background-color: #00000000;
+        border: none;
+        color: white;
+        font-size: 15pt;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 0cm;
+    }
+
+    .cursor {
+        background-color: lightgreen;
+        /* display: inline-block; */
+        width: 10pt;
+        height: 20pt;
+        animation: blink 1.5s linear infinite;
+    }
+}
+</style>

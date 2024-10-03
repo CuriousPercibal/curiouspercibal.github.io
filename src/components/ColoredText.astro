@@ -1,0 +1,30 @@
+---
+import Character from './Character.astro';
+
+
+
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+
+function mapCharacters(ch: string) {
+    if ( ch == ' ' ) {
+        return '_'
+    }
+    return ch
+}
+
+---
+<div class="stream">
+    {text.split('').map(mapCharacters).map((ch) => <Character fg="white" bg="black" char={ch}/>)}
+</div>
+
+<style>
+    .stream {
+        display: flex;
+        flex-direction: row;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
