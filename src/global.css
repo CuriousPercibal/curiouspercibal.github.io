@@ -1,0 +1,26 @@
+main {
+	margin: auto;
+	padding-left: 20%;
+	padding-right: 20%;
+	width: 60%;
+	color: white;
+	font-size: 16pt;
+	line-height: 1.6;
+}
+	
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+a:hover {
+	background-color: lightgreen;
+	color: black !important;
+}
